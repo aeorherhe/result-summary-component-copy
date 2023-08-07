@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 import { Colors } from "./subs/Colors";
 
-export const GradesSummary = ({ results }) => {
+import { Data } from "../assets/data";
+
+export const GradesSummary = () => {
   return (
     <>
-      {results.map((result, i) => {
+      {Data.map((result, i) => {
         const { category, score, icon } = result;
         return (
           <div

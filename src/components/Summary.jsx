@@ -2,25 +2,24 @@
 import { useEffect, useState } from "react";
 
 import { GradesSummary } from "./GradesSummary";
-const dataPath = "../assets/data.json";
 
 export const Summary = () => {
-  const [results, setResults] = useState([]);
+  // const [results, setResults] = useState([]);
 
-  const FetchData = async () => {
-    const resp = await fetch(dataPath);
-    const data = await resp.json();
-    setResults(data);
-  };
+  // const FetchData = async () => {
+  //   const resp = await fetch(dataPath);
+  //   const data = await resp.json();
+  //   setResults(data);
+  // };
 
-  useEffect(() => {
-    FetchData();
-  }, []);
+  // useEffect(() => {
+  //   FetchData();
+  // }, []);
 
   return (
     <section className="summary-stn">
       <h2>Summary</h2>
-      <GradesSummary results={results} />
+      <GradesSummary />
       <button className="btn">Continue</button>
     </section>
   );
