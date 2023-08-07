@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&family=Inter:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//   /* general variables */
+$shadow-1: 0 0 5px rgb(250, 234, 230);
+$shadow-2: 0px 0px 20px 2px rgba(150, 150, 150, 0.3);
+$transition: all 0.3s linear;
+$transition-2: all 0.5s ease-in-out;
+$line-1: 2px solid rgba(116, 108, 113, 0.5);
+$line-2: 2px solid rgba(28, 28, 192, 0.5);
+$line-3: 2px solid rgba(9, 224, 88, 0.5);
+
+// colors
+$White: hsl(0, 0%, 100%);
+$black: #0f172a;
+$bg-body: #f8fafc;
+
+// /******** variables for this project ********/
+$Light-red: hsl(0, 100%, 67%);
+$Orangey-yellow: hsl(39, 100%, 56%);
+$Green-teal: hsl(166, 100%, 37%);
+$Cobalt-blue: hsl(234, 85%, 45%);
+
+// ## Gradients
+// background
+$Light-slate-blue: hsl(252, 100%, 67%);
+$Light-royal-blue: hsl(241, 81%, 54%);
+// circle
+$Violet-blue: hsla(256, 72%, 46%, 1);
+$Persian-blue: hsla(241, 72%, 46%, 0);
+
+// Neutral
+$Pale-blue: hsl(221, 100%, 96%);
+$Light-lavender: hsl(241, 100%, 89%);
+$Dark-gray-blue: hsl(224, 30%, 27%);
+
+.main-ctn {
+  background-color: $bg-body;
+  display: grid;
+  font-family: "Hanken Grotesk", "Open Sans", Arial, Helvetica, sans-serif;
+  height: 100vh;
+}
+
+.main {
+  width: 90vw;
+  min-width: 325px;
+  margin: 0 auto;
+}
+
+.results-stn {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 1.5rem 1rem;
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  background: linear-gradient(
+    to bottom,
+    hsl(252, 100%, 67%),
+    hsl(241, 81%, 54%)
+  );
+  color: $Light-lavender;
+  h1,
+  h2 {
+    color: $White;
+  }
+  h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+.result-grade {
+  //   border: $line-1;
+  width: fit-content;
+  margin: 2rem auto;
+  padding: 2rem 3rem;
+  border-radius: 50%;
+  position: relative;
+  background: linear-gradient(
+    to bottom,
+    hsla(256, 72%, 46%, 1),
+    hsla(241, 72%, 46%, 0)
+  );
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+}
+
+.summary-stn {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.categories-ctn {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  border-radius: 0.75rem;
+  transition: $transition;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.category {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.grade {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.btn {
+  padding: 1rem;
+  font-size: 1.3rem;
+  color: $White;
+  margin: 1rem 0;
+  background-color: $Dark-gray-blue;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: $transition;
+  &:hover {
+    background-color: hsla(224, 39%, 26%, 0.8);
+  }
+}
+
+// media query
+@media (min-width: 45rem) {
+  .main {
+    display: flex;
+    gap: 2rem;
+    max-width: 55rem;
+    height: fit-content;
+    padding-right: 1rem;
+    box-shadow: $shadow-2;
+    border-radius: 2rem;
+    align-self: center;
+  }
+
+  .results-stn {
+    width: 100%;
+    border-radius: 2rem;
+    padding: 2rem;
+    margin: 0;
+    p {
+      font-size: 1.2rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      font-size: 4rem;
+    }
+    .result-grade {
+      margin: 3rem auto;
+    }
+  }
+
+  .summary-stn {
+    width: 100%;
+    h2 {
+      margin: 1rem 0;
+    }
+  }
+}
+
+// myProfile
+.my-profile {
+  background: $Dark-gray-blue;
+  color: white;
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  align-self: self-end;
+}
+
+.my-profile > a {
+  cursor: pointer;
+  color: hsl(51, 79%, 45%);
+  text-decoration: none;
+}
+
+.my-profile-icons a {
+  cursor: pointer;
+  color: var(--White);
+  display: inline-block;
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .my-profile {
+    font-size: 12px;
+  }
+
+  .my-profile-icons a:first-of-type,
+  .my-profile-icons a:last-of-type {
+    display: none;
+  }
+}
