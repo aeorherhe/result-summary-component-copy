@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 import { GradesSummary } from "./GradesSummary";
 
