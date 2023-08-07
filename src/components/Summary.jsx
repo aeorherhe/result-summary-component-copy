@@ -1,30 +1,36 @@
-import { Colors } from "./subs/Colors";
+/* eslint-disable react/prop-types */
+import { useEffect, useState } from "react";
 
+import { Colors } from "./subs/Colors";
 const dataPath = "../src/assets/data.json";
 
-const FetchData = async () => {
-  const resp = await fetch(dataPath);
-  const data = await resp.json();
-  return data;
-};
-
-const SummaryData = await FetchData();
-
 export const Summary = () => {
+  const [results, setResults] = useState([]);
+
+  const FetchData = async () => {
+    const resp = await fetch(dataPath);
+    const data = await resp.json();
+    setResults(data);
+  };
+
+  useEffect(() => {
+    FetchData();
+  }, []);
+
   return (
     <section className="summary-stn">
       <h2>Summary</h2>
-      <GradesSummary />
+      <GradesSummary results={results} />
       <button className="btn">Continue</button>
     </section>
   );
 };
 
-const GradesSummary = () => {
+const GradesSummary = ({ results }) => {
   return (
     <>
-      {SummaryData.map((summary, i) => {
-        const { category, score, icon } = summary;
+      {results.map((result, i) => {
+        const { category, score, icon } = result;
         return (
           <div
             className="categories-ctn"
