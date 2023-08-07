@@ -2,11 +2,7 @@
 import { useEffect, useState } from "react";
 
 import { GradesSummary } from "./GradesSummary";
-<<<<<<< HEAD
-const dataPath = ".././src/assets/data.json";
-=======
 const dataPath = "../assets/data.json";
->>>>>>> 1b8a901 (path)
 
 export const Summary = () => {
   const [results, setResults] = useState([]);
