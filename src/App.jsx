@@ -3,8 +3,6 @@
 import { Results } from "./components/Results";
 import { Summary } from "./components/Summary";
 
-import { MyProfile } from "./components/subs/MyProfile";
-
 function App() {
   // const [results, setResults] = useState(0);
 
@@ -12,7 +10,6 @@ function App() {
     <main className="main">
       <Results />
       <Summary />
-      <MyProfile />
     </main>
   );
 }
