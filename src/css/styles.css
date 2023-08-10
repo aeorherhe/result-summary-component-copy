@@ -160,6 +160,7 @@
 
 @media screen and (max-width: 500px) {
   .my-profile {
+    margin-top: 5rem;
     font-size: 12px;
   }
   .my-profile-icons a:first-of-type,
